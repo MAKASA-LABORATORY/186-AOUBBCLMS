@@ -1,0 +1,14 @@
+{
+    "baseurl": "http://localhost:5001/",
+    "Connection" : {
+        "dbConfig": {
+            "driver": "mysql",
+            "user": "root",
+            "database": "bciis",
+            "password": "password",
+            "host": "localhost",
+            "port": "3306",
+            "timezone": "+08:00"
+        }
+    }
+}
