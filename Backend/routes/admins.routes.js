@@ -36,10 +36,10 @@ admins.post('/save', (req, res) => {
 });
 
 admins.get('/login', (req, res) => {
-    db.sequelize.query('CALL sp_admins_login(:username, :password)', {
+    db.sequelize.query('CALL sp_user_login(:userName, :password)', {
         type: db.sequelize.QueryTypes.SELECT,
         replacements: {
-            username: req.query.username,
+            userName: req.query.userName,
             password: req.query.password
         }
     }).then((data) => {

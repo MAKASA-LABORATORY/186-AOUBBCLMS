@@ -1,7 +1,7 @@
 {
-  "name": "bohol_cacao_industry_information_system",
+  "name": "bisu_bilar_library_management_system",
   "version": "1.0.0",
-  "description": "Bohol Cacao Industry Information System",
+  "description": "Bisu Bilar Library Management System",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
