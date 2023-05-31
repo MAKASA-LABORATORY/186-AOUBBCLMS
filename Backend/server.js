@@ -40,7 +40,7 @@ app.use(express.static('public'));
 
 app.use("/auth", Auth);
 app.use("/template", Template);
-app.use("/admins", AdminsRoute);
+app.use("/adminsRoute", AdminsRoute);
 app.use("/affiliation", Affiliate);
 app.use("/occupation", Occupation);
 app.use("/affiliation_checklist", Affiliate_Checklist);

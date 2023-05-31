@@ -7,22 +7,24 @@ const db = require("../database/config");
 
 //const security = require('../database/security');
 
-admins.post('/save', (req, res) => {
-    db.sequelize.query("CALL sp_admins_save(:id, :fullname, :gender, :username, :passcode)", {
+admins.post('/register', (req, res) => {
+    db.sequelize.query("CALL sp_user_add(:name, :student_id, :department, :year_lvl, :address, :username, :password)", {
         replacements: {
-            id: parseInt(req.body.id),
-            fullname: req.body.fullname,
-            gender: req.body.gender,
+            name: req.body.name,
+            student_id: req.body.student_id,
+            department: req.body.department,
+            year_lvl: req.body.year_lvl,
+            address: req.body.address,
             username: req.body.username,
-            passcode: req.body.passcode,
+            password: req.body.password,
         }
     }).then(data => {
         ret = data[0]["_ret"];
         if (ret === "add_successfully") {
-            res.send({error: false, message: 'admins_add_successfully'});
+            res.send({error: false, message: 'user_add_successfully'});
         } 
         else if (ret === "edit_successfully") {
-            res.send({error: false, message: 'admins_add_successfully'});
+            res.send({error: false, message: 'user_add_successfully'});
         }
          else if (ret === "invalid_username_name_duplicate") {
             res.send({error: false, message: 'duplicate_entry'});
